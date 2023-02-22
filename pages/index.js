@@ -1,4 +1,6 @@
 import useSWR from "swr";
+import Layout from "../components/layout";
+import Head from "next/head";
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
@@ -10,14 +12,12 @@ export default function Index() {
   if (!data) return null;
 
   return (
-    <ul>
-      {data.map((item) => {
-        return (
-          <li>
-            {item.name} {item.desc}
-          </li>
-        );
-      })}
-    </ul>
+    <>
+      <Layout>
+        <Head>
+          <title>EC Store Site</title>
+        </Head>
+      </Layout>
+    </>
   );
 }
