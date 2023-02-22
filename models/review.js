@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose, { Schema } from "mongoose";
 
 const ReviewSchema = new mongoose.Schema({
   title: {
@@ -7,7 +7,6 @@ const ReviewSchema = new mongoose.Schema({
   },
   comment: {
     type: String,
-    required: [true, "Please provide a comment"],
   },
   user: {
     type: Schema.Types.ObjectId,
@@ -22,6 +21,11 @@ const ReviewSchema = new mongoose.Schema({
   rating: {
     type: Number,
     required: [true, "Please specify a raiting for the product"],
+  },
+  item: {
+    type: Schema.Types.ObjectId,
+    ref: "Item",
+    required: true,
   },
 });
 
