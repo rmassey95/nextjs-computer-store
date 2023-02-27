@@ -4,7 +4,7 @@ import shoppingCartIcon from "../public/icons8-shopping-cart.png";
 
 const Navbar = () => {
   return (
-    <div className="w-screen bg-turq">
+    <div className="w-100 bg-turq">
       <nav className="flex items-center justify-between p-1 flex-wrap max-w-screen-xl mx-auto">
         <div className="flex items-center flex-shrink-0 text-white mr-6">
           <a href="/" className="font-semibold text-xl tracking-tight ">

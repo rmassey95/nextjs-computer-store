@@ -43,6 +43,10 @@ const ItemSchema = new mongoose.Schema({
     ref: "Brand",
     required: true,
   },
+  dateAdded: {
+    type: Date,
+    default: Date.now,
+  },
 });
 
 export default mongoose.models.Item || mongoose.model("Item", ItemSchema);
