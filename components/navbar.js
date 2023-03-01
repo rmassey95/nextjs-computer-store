@@ -6,8 +6,8 @@ const Navbar = () => {
   return (
     <div className="w-100 bg-turq">
       <nav className="flex items-center justify-between p-1 flex-wrap max-w-screen-xl mx-auto">
-        <div className="flex items-center flex-shrink-0 text-white mr-6">
-          <a href="/" className="font-semibold text-xl tracking-tight ">
+        <div className="flex items-center flex-shrink-0 text-white mr-6 ml-4">
+          <a href="/" className="font-semibold text-xl tracking-tight">
             EC Store
           </a>
         </div>
@@ -47,7 +47,7 @@ const Navbar = () => {
                 className="mr-1"
                 alt="User account icon"
                 src={accountIcon}
-                height={23}
+                height={24}
                 width={23}
               />
               Account
@@ -60,7 +60,7 @@ const Navbar = () => {
                 className="mr-1"
                 alt="User account icon"
                 src={shoppingCartIcon}
-                height={23}
+                height={24}
                 width={23}
               />
               Cart
