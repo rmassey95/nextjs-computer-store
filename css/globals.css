@@ -1,3 +1,97 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+#moreInfo h2 {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 34px;
+  text-align: left;
+  padding: 15px 15px 0;
+  text-transform: none;
+  margin: 0;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.hiddenContent {
+  color: #333;
+  text-align: left;
+  font-family: "hm_light", sans-serif;
+  font-size: 14px;
+  line-height: 1.45;
+  position: relative;
+  overflow: hidden;
+  max-height: 2000px;
+  will-change: max-height;
+  contain: layout;
+  display: inline-block;
+  opacity: 1;
+  transform: translate(0, 0);
+  margin-top: 5px;
+  margin-bottom: 15px;
+  padding: 0 50px 0 15px;
+  transition: 0.3s opacity, 1.5s max-height;
+  hyphens: auto;
+  z-index: 2;
+}
+
+.hiddenItem {
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  background: #fff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#moreInfo ul li i {
+  position: absolute;
+  transform: translate(-6px, 0);
+  margin-top: 28px;
+  right: 15px;
+}
+
+#moreInfo ul li i:before,
+ul li i:after {
+  content: "";
+  position: absolute;
+  background-color: #217074;
+  width: 3px;
+  height: 9px;
+}
+
+#moreInfo ul li i:before {
+  transform: translate(-2px, 0) rotate(45deg);
+}
+
+#moreInfo ul li i:after {
+  transform: translate(2px, 0) rotate(-45deg);
+}
+
+.hiddenItem input[type="checkbox"] {
+  position: absolute;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+  touch-action: manipulation;
+}
+
+.hiddenItem input[type="checkbox"]:checked ~ h2 {
+  font-weight: 400;
+}
+
+.hiddenItem input[type="checkbox"]:checked ~ .hiddenContent {
+  max-height: 0;
+  transition: 0.3s;
+  opacity: 0;
+}
+
+#moreInfo ul li input[type="checkbox"]:checked ~ i:before {
+  transform: translate(2px, 0) rotate(45deg);
+}
+#moreInfo ul li input[type="checkbox"]:checked ~ i:after {
+  transform: translate(-2px, 0) rotate(-45deg);
+}

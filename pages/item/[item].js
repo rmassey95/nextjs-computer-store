@@ -21,7 +21,7 @@ export async function getServerSideProps({ params }) {
   await dbConnect();
 
   const itemResult = await Item.findById(params.item)
-    .populate("brand")
+    .populate("brand", "name")
     .populate("category");
 
   const item = itemResult.toObject();

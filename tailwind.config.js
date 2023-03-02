@@ -9,6 +9,7 @@ module.exports = {
       colors: {
         lightBeige: "#E7EAEF",
         turq: "#217074",
+        lightTurq: "#257e83",
       },
     },
   },
