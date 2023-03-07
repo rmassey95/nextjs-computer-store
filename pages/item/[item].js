@@ -3,15 +3,16 @@ import Layout from "../../components/layout";
 import DisplayItem from "../../components/displayItem";
 import dbConnect from "../../lib/dbConnect";
 import Item from "../../models/item";
+import Review from "../../models/review";
 
-export default function Categories({ item }) {
+export default function Categories({ item, reviews }) {
   return (
     <>
       <Layout>
         <Head>
           <title>{item.name}</title>
         </Head>
-        <DisplayItem item={item} />
+        <DisplayItem item={item} reviews={reviews} />
       </Layout>
     </>
   );
@@ -23,6 +24,7 @@ export async function getServerSideProps({ params }) {
   const itemResult = await Item.findById(params.item)
     .populate("brand", "name")
     .populate("category");
+  const reviewResult = await Review.find({ item: params.item });
 
   const item = itemResult.toObject();
   item._id = item._id.toString();
@@ -33,5 +35,14 @@ export async function getServerSideProps({ params }) {
     item.specs[i]._id = item.specs[i]._id.toString();
   }
 
-  return { props: { item: item } };
+  const reviews = reviewResult.map((doc) => {
+    const review = doc.toObject();
+    review.user = review.user.toString();
+    review._id = review._id.toString();
+    review.item = review.item.toString();
+    review.datePosted = review.datePosted.toString();
+    return review;
+  });
+
+  return { props: { item: item, reviews: reviews } };
 }

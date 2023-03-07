@@ -27,13 +27,13 @@ const Navbar = () => {
           <div className="lg:flex-grow">
             <a
               href="/"
-              className="block mt-4 lg:inline-block lg:mt-0 p-4 border border-turq text-white hover:border-white rounded mr-6 "
+              className="block mt-4 lg:inline-block lg:mt-0 p-4 border border-turq text-white hover:border-white rounded mr-4 "
             >
               Shop
             </a>
             <a
-              href="/"
-              className="block mt-4 lg:inline-block lg:mt-0 p-4 border border-turq text-white hover:border-white rounded mr-4 "
+              href="/brands"
+              className="block mt-4 lg:inline-block lg:mt-0 p-4 border border-turq text-white hover:border-white rounded"
             >
               Brands
             </a>

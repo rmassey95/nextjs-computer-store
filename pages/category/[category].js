@@ -9,7 +9,7 @@ export default function Categories({ items }) {
     <>
       <Layout>
         <Head>
-          <title>EC Store {items[0].category.name}</title>
+          <title>EC Store - {items[0].category.name}</title>
         </Head>
         <CategoryItems items={items} />
       </Layout>
