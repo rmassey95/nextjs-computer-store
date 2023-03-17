@@ -80,7 +80,7 @@ const DisplayItem = ({ item, reviews }) => {
                   Brand:{" "}
                   <Link
                     className="text-blue-500 hover:underline"
-                    href={`/brand/${item.brand.name}`}
+                    href={`/brand/${item.brand._id}`}
                   >
                     {item.brand.name}
                   </Link>
