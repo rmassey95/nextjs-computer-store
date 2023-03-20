@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const DisplayAllItems = ({ items, categories }) => {
   return (
@@ -14,7 +15,7 @@ const DisplayAllItems = ({ items, categories }) => {
                 key={category._id}
                 className="bg-white p-4 border border-slate-300 flex flex-col rounded w-96"
               >
-                <a href={`/category/${category._id}`}>
+                <Link href={`/category/${category._id}`}>
                   <Image
                     className="self-center"
                     src={category.img}
@@ -28,7 +29,7 @@ const DisplayAllItems = ({ items, categories }) => {
                   <div className="mt-2 text-gray-700 text-sm">
                     {category.overview}
                   </div>
-                </a>
+                </Link>
               </div>
             );
           })}
@@ -41,7 +42,7 @@ const DisplayAllItems = ({ items, categories }) => {
         <div className="grid grid-cols-4 p-5 bg-lightBeige rounded-lg gap-3 mb-8">
           {items.map((item) => {
             return (
-              <a
+              <Link
                 href={`/item/${item._id}`}
                 key={item._id}
                 className="bg-white p-4 border border-slate-300 flex flex-col rounded"
@@ -58,7 +59,7 @@ const DisplayAllItems = ({ items, categories }) => {
                   {item.name}
                 </div>
                 <div className="mt-2 italic font-semibold">${item.price}</div>
-              </a>
+              </Link>
             );
           })}
         </div>

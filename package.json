@@ -23,11 +23,15 @@
   },
   "homepage": "https://github.com/rmassey95/nextjs-computer-store#readme",
   "dependencies": {
+    "@reduxjs/toolkit": "^1.9.3",
     "dotenv": "^16.0.3",
     "mongoose": "^6.9.3",
     "next": "^13.1.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-redux": "^8.0.5",
+    "react-router-dom": "^6.9.0",
+    "redux-persist": "^6.0.0",
     "swr": "^2.0.3"
   },
   "devDependencies": {

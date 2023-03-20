@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const CategoryItems = ({ items }) => {
   return (
@@ -18,7 +19,7 @@ const CategoryItems = ({ items }) => {
               key={item._id}
               className="bg-white p-4 border border-slate-300 rounded my-4"
             >
-              <a href={`/item/${item._id}`}>
+              <Link href={`/item/${item._id}`}>
                 <Image
                   className="self-center"
                   src={item.img}
@@ -40,7 +41,7 @@ const CategoryItems = ({ items }) => {
                     <p className="text-green-500">Lots in stock!</p>
                   )}
                 </div>
-              </a>
+              </Link>
             </div>
           );
         })}

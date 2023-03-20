@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const DisplayAllItems = ({ brands }) => {
   return (
@@ -10,7 +11,7 @@ const DisplayAllItems = ({ brands }) => {
         <div className="grid grid-cols-4 p-5 bg-lightBeige rounded-lg gap-3 mb-8">
           {brands.map((brand) => {
             return (
-              <a
+              <Link
                 href={`/brand/${brand._id}`}
                 key={brand._id}
                 className="bg-white p-4 border border-slate-300 flex flex-col rounded"
@@ -29,7 +30,7 @@ const DisplayAllItems = ({ brands }) => {
                 <div className="mt-2 text-gray-700 text-sm">
                   {brand.overview}
                 </div>
-              </a>
+              </Link>
             );
           })}
         </div>

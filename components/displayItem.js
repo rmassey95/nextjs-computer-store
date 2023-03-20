@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../redux/cart.slice";
 
 const DisplayItem = ({ item, reviews }) => {
   const formatDate = (dateStr) => {
@@ -60,6 +62,8 @@ const DisplayItem = ({ item, reviews }) => {
     return rating;
   };
 
+  const dispatch = useDispatch();
+
   return (
     <div className="flex justify-center">
       <div className="p-1 flex-wrap w-1/2 mt-8 mx-8 bg-lightBeige rounded p-5 justify-center mb-8">
@@ -92,7 +96,10 @@ const DisplayItem = ({ item, reviews }) => {
                   <h4>No ratings given yet</h4>
                 )}
               </div>
-              <button className="ml-8 bg-turq hover:bg-lightTurq text-white font-bold py-2 px-4 rounded">
+              <button
+                onClick={() => dispatch(addToCart(item))}
+                className="ml-8 bg-turq hover:bg-lightTurq text-white font-bold py-2 px-4 rounded"
+              >
                 Add to Cart
               </button>
             </div>
