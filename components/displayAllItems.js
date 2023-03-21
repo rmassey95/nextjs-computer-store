@@ -6,14 +6,14 @@ const DisplayAllItems = ({ items, categories }) => {
     <div className="p-1 flex-wrap max-w-screen-xl mx-auto mt-8 flex justify-center">
       <div>
         <div className="text-center mb-4">
-          <h2 className="text-2xl font-bold">Search by a specific category</h2>
+          <h2 className="text-2xl font-bold">Search specific category</h2>
         </div>
-        <div className="grid grid-cols-2 gap-8 p-5 bg-lightBeige rounded-lg mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-5 bg-lightBeige rounded-lg mb-8">
           {categories.map((category) => {
             return (
               <div
                 key={category._id}
-                className="bg-white p-4 border border-slate-300 flex flex-col rounded w-96"
+                className="bg-white p-4 border border-slate-300 flex flex-col rounded w-auto sm:w-80 lg:w-96"
               >
                 <Link href={`/category/${category._id}`}>
                   <Image
@@ -35,11 +35,11 @@ const DisplayAllItems = ({ items, categories }) => {
           })}
         </div>
       </div>
-      <div className="mx-8">
+      <div className="md:mx-8">
         <div className="text-center mb-4">
-          <h2 className="text-2xl font-bold">View all of our products</h2>
+          <h2 className="text-2xl font-bold">View all our products</h2>
         </div>
-        <div className="grid grid-cols-4 p-5 bg-lightBeige rounded-lg gap-3 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 p-5 bg-lightBeige rounded-lg gap-3 mb-8">
           {items.map((item) => {
             return (
               <Link

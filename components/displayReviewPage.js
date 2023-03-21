@@ -15,6 +15,7 @@ const DisplayReviewPage = ({ item }) => {
       ></Image>
       <form className="flex flex-col my-4" action="/api/form" method="post">
         <input
+          required
           className="mb-4 p-2"
           placeholder="Title"
           type="text"
@@ -22,6 +23,7 @@ const DisplayReviewPage = ({ item }) => {
           name="title"
         />
         <input
+          required
           className="mb-4 p-2"
           placeholder="Username"
           type="text"
@@ -39,7 +41,7 @@ const DisplayReviewPage = ({ item }) => {
         <p>Star rating: </p>
         <div className="mb-4 p-2 bg-white flex flex-col items-start">
           <div>
-            <input type="radio" id="zero" name="rating" value={0} />
+            <input type="radio" id="zero" name="rating" value={0} required />
             <label for="zero"> &#9734;&#9734;&#9734;&#9734;&#9734; </label>
           </div>
           <div>

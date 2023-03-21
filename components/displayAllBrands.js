@@ -4,11 +4,11 @@ import Link from "next/link";
 const DisplayAllItems = ({ brands }) => {
   return (
     <div className="p-1 flex-wrap max-w-screen-xl mx-auto mt-8 flex justify-center">
-      <div className="mx-8">
+      <div className="md:mx-8">
         <div className="text-center mb-4">
           <h2 className="text-2xl font-bold">All of our brands</h2>
         </div>
-        <div className="grid grid-cols-4 p-5 bg-lightBeige rounded-lg gap-3 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 p-5 bg-lightBeige rounded-lg gap-3 mb-8">
           {brands.map((brand) => {
             return (
               <Link

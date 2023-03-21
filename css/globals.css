@@ -4,7 +4,6 @@
 
 #moreInfo h2 {
   font-weight: 600;
-  font-size: 18px;
   line-height: 34px;
   text-align: left;
   padding: 15px 15px 0;
@@ -30,7 +29,7 @@
   transform: translate(0, 0);
   margin-top: 5px;
   margin-bottom: 15px;
-  padding: 0 50px 0 15px;
+  padding: 0 15px 0 15px;
   transition: 0.3s opacity, 1.5s max-height;
   hyphens: auto;
   z-index: 2;

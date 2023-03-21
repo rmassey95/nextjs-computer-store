@@ -66,9 +66,9 @@ const DisplayItem = ({ item, reviews }) => {
 
   return (
     <div className="flex justify-center">
-      <div className="p-1 flex-wrap w-1/2 mt-8 mx-8 bg-lightBeige rounded p-5 justify-center mb-8">
+      <div className="p-1 flex-wrap lg:w-1/2 mt-8 mx-1 lg:mx-8 bg-lightBeige rounded p-5 justify-center mb-8">
         <div className="flex flex-col">
-          <div className="flex">
+          <div className="lg:flex">
             <Image
               className="self-center rounded-lg"
               src={item.img}
@@ -78,7 +78,7 @@ const DisplayItem = ({ item, reviews }) => {
               alt={`${item.name} image`}
             ></Image>
             <div className="grow flex flex-col justify-between">
-              <div className="ml-8">
+              <div className="lg:ml-8 mb-2 lg:mb-0">
                 <h2 className="font-bold text-3xl text-center">{item.name}</h2>
                 <p className="mt-3">
                   Brand:{" "}
@@ -98,23 +98,23 @@ const DisplayItem = ({ item, reviews }) => {
               </div>
               <button
                 onClick={() => dispatch(addToCart(item))}
-                className="ml-8 bg-turq hover:bg-lightTurq text-white font-bold py-2 px-4 rounded"
+                className="lg:ml-8 bg-turq hover:bg-lightTurq text-white font-bold py-2 px-4 rounded"
               >
                 Add to Cart
               </button>
             </div>
           </div>
-          <div className="my-5 mx-8">
+          <div className="my-5 lg:mx-8">
             <h3 className="text-xl font-bold">Overview</h3>
             <p className="ml-4">{item.overview}</p>
           </div>
-          <div id="moreInfo" className="mx-8">
+          <div id="moreInfo" className="lg:mx-8">
             <ul>
               <li className="hiddenItem">
                 <input type="checkbox" defaultChecked />
                 <i></i>
-                <h2>Additional Information</h2>
-                <div className="hiddenContent mx-8">
+                <h2 className="lg:text-lg">Additional Information</h2>
+                <div className="hiddenContent mx-3 lg:mx-8">
                   <ul className="list-disc text-l py-4">
                     {item.additionalInfo.map((addInfo, indx) => {
                       return indx < item.additionalInfo.length - 1 ? (
@@ -135,9 +135,9 @@ const DisplayItem = ({ item, reviews }) => {
                   defaultChecked
                 />
                 <i></i>
-                <h2>Specifications</h2>
-                <div className="hiddenContent mx-5 w-9/12">
-                  <ul className="text-l py-4">
+                <h2 className="lg:text-lg">Specifications</h2>
+                <div className="hiddenContent w-full">
+                  <ul className="text-xs lg:text-l py-4">
                     {item.specs[0] ? (
                       item.specs.map((spec, indx) => {
                         return indx % 2 === 0 ? (
@@ -145,7 +145,7 @@ const DisplayItem = ({ item, reviews }) => {
                             key={indx}
                             className="p-2 border-b flex justify-between bg-slate-200"
                           >
-                            <p>{spec.name}</p>
+                            <p className="font-bold">{spec.name}</p>
                             <p>{spec.content}</p>
                           </li>
                         ) : (
@@ -153,7 +153,7 @@ const DisplayItem = ({ item, reviews }) => {
                             key={indx}
                             className="p-2 border-b flex justify-between"
                           >
-                            <p>{spec.name}</p>
+                            <p className="font-bold">{spec.name}</p>
                             <p>{spec.content}</p>
                           </li>
                         );
@@ -167,14 +167,14 @@ const DisplayItem = ({ item, reviews }) => {
               <li className="hiddenItem">
                 <input type="checkbox" defaultChecked />
                 <i></i>
-                <h2>Date added to Store</h2>
+                <h2 className="lg:text-lg">Date added to Store</h2>
                 <div className="hiddenContent">
                   <p className="p-2">{formatDate(item.dateAdded)}</p>
                 </div>
               </li>
             </ul>
           </div>
-          <div className="my-5 mx-8 bg-white">
+          <div className="my-5 lg:mx-8 bg-white">
             <div className="flex justify-between mx-4 py-4  border-b">
               <h3 className="text-xl font-bold">Reviews</h3>
               <Link
@@ -189,14 +189,18 @@ const DisplayItem = ({ item, reviews }) => {
                 return (
                   <div key={review._id} className="py-4 mx-6 pb-3">
                     <div className="flex justify-between">
-                      <h4 className="text-lg font-bold">{review.title}</h4>
-                      <p className="text-sm italic">
+                      <h4 className="lg:text-lg font-bold">{review.title}</h4>
+                      <p className="text-xs lg:text-sm italic">
                         {formatDate(review.datePosted)}
                       </p>
                     </div>
-                    <p className="ml-4 italic text-sm">{review.user}</p>
+                    <p className="italic text-sm">{review.user}</p>
                     <p className="ml-4 text-turq">{review.rating} / 5</p>
-                    <p className="pb-4 border-b">{review.comment}</p>
+                    {review.comment ? (
+                      <p className="pb-4 border-b">{review.comment}</p>
+                    ) : (
+                      <p className="pb-4 border-b">No comment provided</p>
+                    )}
                   </div>
                 );
               })

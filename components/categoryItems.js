@@ -10,9 +10,9 @@ const CategoryItems = ({ items }) => {
         </h2>
       </div>
       <div className="mb-2">
-        <p className="">Showing {items.length} results</p>
+        <p className="ml-2">Showing {items.length} results</p>
       </div>
-      <div className="grid grid-cols-4 p-5 bg-lightBeige rounded-lg gap-3 mb-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 p-5 bg-lightBeige rounded-lg gap-3 mb-8">
         {items.map((item) => {
           return (
             <div
