@@ -194,7 +194,6 @@ const DisplayItem = ({ item, reviews }) => {
                         {formatDate(review.datePosted)}
                       </p>
                     </div>
-                    {console.log(review)}
                     <p className="ml-4 italic text-sm">{review.user}</p>
                     <p className="ml-4 text-turq">{review.rating} / 5</p>
                     <p className="pb-4 border-b">{review.comment}</p>

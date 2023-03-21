@@ -6,7 +6,6 @@ import Item from "../../models/item";
 import Review from "../../models/review";
 
 export default function Categories({ item, reviews }) {
-  console.log(reviews);
   return (
     <>
       <Layout>
