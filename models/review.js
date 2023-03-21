@@ -9,9 +9,8 @@ const ReviewSchema = new mongoose.Schema({
     type: String,
   },
   user: {
-    type: Schema.Types.ObjectId,
-    ref: "User",
-    required: true,
+    type: String,
+    required: [true, "Username for the review is required"],
   },
   datePosted: {
     type: Date,

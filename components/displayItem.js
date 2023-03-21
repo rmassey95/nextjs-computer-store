@@ -175,7 +175,15 @@ const DisplayItem = ({ item, reviews }) => {
             </ul>
           </div>
           <div className="my-5 mx-8 bg-white">
-            <h3 className="mx-4 py-4 text-xl font-bold border-b">Reviews</h3>
+            <div className="flex justify-between mx-4 py-4  border-b">
+              <h3 className="text-xl font-bold">Reviews</h3>
+              <Link
+                href={`/create-review/${item._id}`}
+                className="bg-turq hover:bg-lightTurq text-white text-sm py-1 px-3 rounded"
+              >
+                Add Review
+              </Link>
+            </div>
             {reviews[0] ? (
               reviews.map((review) => {
                 return (
@@ -186,6 +194,8 @@ const DisplayItem = ({ item, reviews }) => {
                         {formatDate(review.datePosted)}
                       </p>
                     </div>
+                    {console.log(review)}
+                    <p className="ml-4 italic text-sm">{review.user}</p>
                     <p className="ml-4 text-turq">{review.rating} / 5</p>
                     <p className="pb-4 border-b">{review.comment}</p>
                   </div>

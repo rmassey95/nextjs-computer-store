@@ -6,6 +6,7 @@ import Item from "../../models/item";
 import Review from "../../models/review";
 
 export default function Categories({ item, reviews }) {
+  console.log(reviews);
   return (
     <>
       <Layout>
@@ -37,7 +38,6 @@ export async function getServerSideProps({ params }) {
 
   const reviews = reviewResult.map((doc) => {
     const review = doc.toObject();
-    review.user = review.user.toString();
     review._id = review._id.toString();
     review.item = review.item.toString();
     review.datePosted = review.datePosted.toString();
