@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const DisplayReviewPage = ({ item }) => {
   return (
-    <div className="p-1 flex-wrap max-w-screen-xl mx-auto my-8 w-9/12 border p-5 rounded bg-lightBeige">
+    <div className="p-1 flex-wrap max-w-screen-xl mx-2 lg:mx-auto my-8 lg:w-9/12 border p-5 rounded bg-lightBeige">
       <h1 className="text-2xl font-bold">New Review</h1>
 
       <h2 className="my-2">{item.name}</h2>
